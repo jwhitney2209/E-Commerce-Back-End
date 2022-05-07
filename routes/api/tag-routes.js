@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
   Tag.findOne({
     where: {
       id: req.params.id
-    }
+    },
     attributes: [
       'id',
       'tag_name'
@@ -41,6 +41,17 @@ router.get('/:id', (req, res) => {
         attributes: ['id', 'product_name', 'price', 'stock']
       }
     ]
+  })
+  .then(dbTagData => {
+    if (!dbTagData) {
+      res.status(404).json({ message: 'No tag found with this id' });
+      return;
+    }
+    res.json(dbTagData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   })
   // be sure to include its associated Product data
 });
