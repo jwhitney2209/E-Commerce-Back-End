@@ -1,7 +1,11 @@
 
 # E-Commerce Back-End
+[Walkthrough Video](https://youtu.be/rtXMmxxbaMg)
 
 ![badge](https://img.shields.io/badge/License-Open-brightgreen)
+
+![Screenshot](./src/screenshot.png)
+
 
 
 ## Description
